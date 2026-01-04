@@ -16,6 +16,20 @@
       --accent: #cfae70;
       --transition: 0.4s ease;
     }
+    .about-text {
+  font-family: 'Playfair Display', serif;
+  max-width: 620px;
+  margin: 1rem auto;
+  line-height: 1.9;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+@media (max-width: 600px) {
+  .about-text {
+    text-align: center;
+  }
+}
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -216,7 +230,7 @@
 <body>
 
   <nav>
-    <div>AG </div>
+    <div>Abhisek Ghosh </div>
     <div>
       <a href="#about">About</a>
       <a href="#music">Music</a>
@@ -236,15 +250,23 @@
   </header>
 
   <!-- About Section -->
-  <section id="about" class="flex-section fade-on-scroll">
-    <img src="images/Abhisek 20SS.jpg" alt="Abhisek Ghosh">
-    <div>
-      <h2>About</h2>
-     <p>
-        Abhisek Ghosh is a Pop artist whose music blends Indian classical nuances, Bengali melodies, and Western Rock & Pop energy. As a songwriter, composer, and producer, he crafts performances that leave lasting emotional impressions.
-From conducting 1000 instrumentalists at the 2016 World Cultural Festival in Delhi to live radio performances with All India Radio, Abhisek’s work bridges tradition and contemporary sound.
-A Berklee College of Music graduate with a Master’s in Contemporary Performance, he continues to explore music that resonates deeply, creating moments of presence and connection for every listener.
-      </p>
+<section id="about" class="flex-section fade-on-scroll">
+  <img src="images/Abhisek 20SS.jpg" alt="Abhisek Ghosh">
+  <div>
+    <h2>About</h2>
+        <p class="about-text">
+  Abhisek Ghosh is a Pop artist whose music blends Indian classical nuances,
+  Bengali melodies, and Western Rock & Pop energy. As a songwriter, composer,
+  and producer, he crafts performances that leave lasting emotional impressions.
+  <br><br>
+  From conducting 1000 instrumentalists at the 2016 World Cultural Festival in
+  Delhi to live radio performances with All India Radio, Abhisek’s work bridges
+  tradition and contemporary sound.
+  <br><br>
+  A Berklee College of Music graduate with a Master’s in Contemporary Performance,
+  he continues to explore music that resonates deeply, creating moments of
+  presence and connection for every listener.
+</p>
     
     </div>
   </section>

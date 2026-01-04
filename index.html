@@ -14,6 +14,7 @@
       --fg: #f5f5f5;
       --muted: #9a9a9a;
       --accent: #cfae70;
+      --transition: 0.4s ease;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -23,16 +24,29 @@
       color: var(--fg);
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
-    header {
-      min-height: 100vh;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(to bottom, rgba(0,0,0,.6), transparent);
+      z-index: 100;
     }
+
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      transition: color var(--transition);
+    }
+
+    nav a:hover { color: var(--accent); }
 
     h1 {
       font-family: 'Playfair Display', serif;
@@ -53,28 +67,6 @@
       color: var(--muted);
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 1.5rem 2rem;
-      background: linear-gradient(to bottom, rgba(0,0,0,.6), transparent);
-    }
-
-    nav a {
-      color: var(--fg);
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    section {
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-
     .accent { color: var(--accent); }
 
     .btn {
@@ -85,12 +77,115 @@
       color: var(--fg);
       text-decoration: none;
       letter-spacing: 0.05em;
-      transition: all 0.3s ease;
+      transition: all var(--transition);
     }
 
     .btn:hover {
       background: var(--accent);
       color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: url('images/hero.jpg') center/cover no-repeat fixed;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    header > div {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 2rem;
+      border-radius: 8px;
+      animation: fadeUp 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    section {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    /* Flex layout for About/Teaching */
+    .flex-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .flex-section img {
+      max-width: 300px;
+      border-radius: 8px;
+      flex: 1;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .flex-section img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(255,215,112,0.3);
+    }
+
+    .flex-section div { flex: 2; max-width: 600px; }
+
+    /* Music Gallery */
+    .music-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .music-item {
+      max-width: 250px;
+      text-align: center;
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+    }
+
+    .music-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .music-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(255,215,112,0.3);
+    }
+
+    /* Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(255,215,112,0.3);
     }
 
     footer {
@@ -98,6 +193,23 @@
       text-align: center;
       font-size: 0.8rem;
       color: var(--muted);
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -109,10 +221,12 @@
       <a href="#about">About</a>
       <a href="#music">Music</a>
       <a href="#teaching">Teaching</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
+  <!-- Hero Header -->
   <header>
     <div>
       <h1>Music as <span class="accent">Presence</span></h1>
@@ -121,38 +235,73 @@
     </div>
   </header>
 
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      I am a singer, songwriter, producer, and teacher.
-      My work lives between tradition and exploration —
-      where music is not only heard, but inhabited.
-    </p>
+  <!-- About Section -->
+  <section id="about" class="flex-section fade-on-scroll">
+    <img src="images/abby-portrait.jpg" alt="Abhisek Ghosh">
+    <div>
+      <h2>About</h2>
+      <p>
+        I am a singer, songwriter, producer, and teacher.
+        My work lives between tradition and exploration —
+        where music is not only heard, but inhabited.
+      </p>
+    </div>
   </section>
 
-  <section id="music">
+  <!-- Music Section -->
+  <section id="music" class="fade-on-scroll">
     <h2>Music & Performances</h2>
-    <p>
-      Live concerts, studio work, collaborative projects, and curated experiences.
-      Sound as a space of attention.
-    </p>
-    <a href="#contact" class="btn">Bookings</a>
+    <p>Live concerts, studio work, collaborative projects, and curated experiences. Sound as a space of attention.</p>
+    
+    <div class="music-gallery">
+      <div class="music-item">
+        <img src="images/RISE Poster.jpg" alt="Album 1">
+        <p>Album / RISE </p>
+        <a href="https://youtu.be/x-Zm_5buvbU?si=maNb6MJoySJeVTsq" class="btn">Listen</a>
+      </div>
+      <div class="music-item">
+        <img src="images/POR.jpg" alt="Album 2">
+        <p>Album / POR </p>
+        <a href="https://youtu.be/KJr4HHavay4?si=nW48MOo1TuLsYR4f" class="btn">Listen</a>
+      </div>
+      <div class="music-item">
+        <img src="images/Mora Saiyaan.jpg" alt="Album 3">
+        <p>Album / Mora Saiyaan </p>
+        <a href="https://youtu.be/RBldXc7x05k?si=W9UO1b25KPMyEwsz" class="btn">Listen</a>
+      </div>
+    </div>
+
+    <a href="#contact" class="btn" style="margin-top: 2rem;">Bookings</a>
   </section>
 
-  <section id="teaching">
-    <h2>Teaching</h2>
-    <p>
-      Voice, creativity, and musical presence.
-      Classes rooted in technique, awareness, and expression.
-    </p>
-    <a href="https://njamusicclass.com" class="btn">Music Classes</a>
+  <!-- Teaching Section -->
+  <section id="teaching" class="flex-section fade-on-scroll">
+    <img src="images/teaching.jpg" alt="Teaching">
+    <div>
+      <h2>Teaching</h2>
+      <p>
+        Voice, creativity, and musical presence.
+        Classes rooted in technique, awareness, and expression.
+      </p>
+      <a href="https://njamusicclass.com" class="btn">Music Classes</a>
+    </div>
   </section>
 
-  <section id="contact">
+  <!-- Gallery Section -->
+  <section id="gallery" class="fade-on-scroll">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="images/gallery1.jpg" alt="Live performance">
+      <img src="images/gallery2.jpg" alt="Studio session">
+      <img src="images/gallery3.jpg" alt="Teaching">
+      <img src="images/gallery4.jpg" alt="Collaboration">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade-on-scroll">
     <h2>Contact</h2>
-    <p>
-      For performances, collaborations, or classes.
-    </p>
+    <p>For performances, collaborations, or classes.</p>
     <p class="accent">contact@abhisekghosh.live</p>
   </section>
 
@@ -162,6 +311,20 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll Fade-In Animation
+    const faders = document.querySelectorAll('.fade-on-scroll');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
   </script>
 
 </body>

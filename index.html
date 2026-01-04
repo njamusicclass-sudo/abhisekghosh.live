@@ -3,81 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abby | Singer-Songwriter & Music Educator</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
+  <title>Abhisek Ghosh — Live</title>
+  <meta name="description" content="Official artist website of Abhisek Ghosh — music, performances, teaching, and philosophy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: #fafafa;
-      color: #222;
-      line-height: 1.7;
+    :root {
+      --bg: #0b0b0b;
+      --fg: #f5f5f5;
+      --muted: #9a9a9a;
+      --accent: #cfae70;
     }
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 80px 24px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
     }
 
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 0.2em;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
 
     h2 {
-      font-weight: 300;
-      font-size: 1.2rem;
-      margin-top: 0;
-      color: #555;
-    }
-
-    blockquote {
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      margin: 40px 0;
-      color: #000;
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
-    .buttons {
-      margin-top: 32px;
+    p {
+      max-width: 650px;
+      margin: 1rem auto;
+      color: var(--muted);
     }
 
-    .buttons a {
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(to bottom, rgba(0,0,0,.6), transparent);
+    }
+
+    nav a {
+      color: var(--fg);
       text-decoration: none;
-      color: #000;
-      border: 1px solid #000;
-      padding: 10px 20px;
-      margin-right: 12px;
-      border-radius: 30px;
+      margin-left: 1.5rem;
       font-size: 0.9rem;
     }
 
-    .buttons a:hover {
-      background: #000;
-      color: #fff;
+    section {
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .accent { color: var(--accent); }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      border: 1px solid var(--accent);
+      color: var(--fg);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>Abby</h1>
-    <h2>Singer-songwriter · Music educator</h2>
 
-    <blockquote>
-      Music is not merely performed, but breathed and lived.
-    </blockquote>
-
-    <div class="buttons">
-      <a href="#">Listen</a>
-      <a href="#">Learn with me</a>
+  <nav>
+    <div>Abhisek Ghosh</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#music">Music</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#contact">Contact</a>
     </div>
-  </div>
+  </nav>
+
+  <header>
+    <div>
+      <h1>Music as <span class="accent">Presence</span></h1>
+      <p>Voice. Devotion. Creation.<br/>Live performances, teaching, and sound as a living practice.</p>
+      <a href="#music" class="btn">Enter</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am a singer, songwriter, producer, and teacher.
+      My work lives between tradition and exploration —
+      where music is not only heard, but inhabited.
+    </p>
+  </section>
+
+  <section id="music">
+    <h2>Music & Performances</h2>
+    <p>
+      Live concerts, studio work, collaborative projects, and curated experiences.
+      Sound as a space of attention.
+    </p>
+    <a href="#contact" class="btn">Bookings</a>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p>
+      Voice, creativity, and musical presence.
+      Classes rooted in technique, awareness, and expression.
+    </p>
+    <a href="https://njamusicclass.com" class="btn">Music Classes</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      For performances, collaborations, or classes.
+    </p>
+    <p class="accent">contact@abhisekghosh.live</p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Abhisek Ghosh · All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>

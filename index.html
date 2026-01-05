@@ -452,26 +452,24 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Scroll Fade-In Animation
-    const faders = document.querySelectorAll('.fade-on-scroll');
-    const appearOptions = { threshold: 0.2 };
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, appearOptions);
+  const faders = document.querySelectorAll('.fade-on-scroll');
+  const appearOptions = { threshold: 0.2 };
 
-    faders.forEach(fader => appearOnScroll.observe(fader));
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => appearOnScroll.observe(fader));
 
   lucide.createIcons();
-
-
-  <script>
+</script>
   ...
 </div>
 </body>

@@ -251,39 +251,46 @@
       transform: translateY(0);
     }
 
-    /* Social Sidebar */
-    .social-sidebar {
-      position: fixed;
-      left: 2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      z-index: 50;
-    }
+    /* Fixed Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 9999; /* extra high so it’s above everything */
+}
 
-    .social-sidebar a {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      opacity: 0.6;
-      transition: all 0.3s ease;
-    }
+.social-sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  color: var(--fg);
+  transition: all 0.3s ease;
+}
 
-    .social-sidebar svg { width: 18px; height: 18px; }
+.social-sidebar a:hover {
+  background: var(--accent);
+  color: #000;
+  transform: translateX(4px) scale(1.1);
+}
 
-    .social-sidebar a:hover {
-      color: var(--accent);
-      opacity: 1;
-      transform: translateX(4px);
-    }
+.social-sidebar svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.5;
+}
 
-    @media (max-width: 900px) {
-      .social-sidebar { display: none; }
-    }
+/* Optional: hide on really small screens */
+@media (max-width: 600px) {
+  .social-sidebar { display: none; }
+}
 
   </style>
 </head>
@@ -303,14 +310,27 @@
   </nav>
 
   <!-- Social Sidebar -->
-  <div class="social-sidebar">
-    <a href="https://open.spotify.com/" target="_blank" aria-label="Spotify"><i data-lucide="spotify"></i></a>
-    <a href="https://music.apple.com/" target="_blank" aria-label="Apple Music"><i data-lucide="music"></i></a>
-    <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><i data-lucide="youtube"></i></a>
-    <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-  </div>
+<div class="social-sidebar">
+  <a href="https://open.spotify.com/" target="_blank" aria-label="Spotify">
+    <svg data-lucide="spotify"></svg>
+  </a>
+  <a href="https://music.apple.com/" target="_blank" aria-label="Apple Music">
+    <svg data-lucide="music"></svg>
+  </a>
+  <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
+    <svg data-lucide="youtube"></svg>
+  </a>
+  <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+    <svg data-lucide="instagram"></svg>
+  </a>
+  <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+    <svg data-lucide="facebook"></svg>
+  </a>
+  <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
+    <svg data-lucide="linkedin"></svg>
+  </a>
+</div>
+
 
   <!-- Hero Header -->
   <header>

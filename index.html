@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abhisek Ghosh — Live</title>
   <meta name="description" content="Official artist website of Abhisek Ghosh — music, performances, teaching, and philosophy." />
-  
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,12 +121,8 @@
       opacity: 0;
     }
 
-    section {
-      padding: 6rem 2rem;
-      text-align: center;
-    }
+    section { padding: 6rem 2rem; text-align: center; }
 
-    /* Flex layout for About/Teaching */
     .flex-section {
       display: flex;
       flex-wrap: wrap;
@@ -149,7 +145,6 @@
 
     .flex-section div { flex: 2; max-width: 600px; }
 
-    /* About text */
     .about-text {
       font-family: 'Playfair Display', serif;
       max-width: 620px;
@@ -163,7 +158,6 @@
       .about-text { text-align: center; }
     }
 
-    /* Philosophy */
     .philosophy { max-width: 800px; margin: 0 auto; }
     .philosophy-entry {
       font-family: 'Playfair Display', serif;
@@ -183,7 +177,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* Music Gallery */
     .music-gallery {
       display: flex;
       flex-wrap: wrap;
@@ -198,17 +191,13 @@
       cursor: pointer;
     }
 
-    .music-item img {
-      width: 100%;
-      border-radius: 8px;
-    }
+    .music-item img { width: 100%; border-radius: 8px; }
 
     .music-item:hover {
       transform: scale(1.05);
       box-shadow: 0 15px 35px rgba(255,215,112,0.3);
     }
 
-    /* Gallery Grid */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -226,7 +215,6 @@
       box-shadow: 0 15px 35px rgba(255,215,112,0.3);
     }
 
-    /* Footer */
     footer {
       padding: 3rem 2rem;
       text-align: center;
@@ -234,7 +222,6 @@
       color: var(--muted);
     }
 
-    /* Animations */
     @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -251,65 +238,62 @@
       transform: translateY(0);
     }
 
-    /* Fixed Social Sidebar */
-.social-sidebar {
-  position: fixed;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  z-index: 9999; /* extra high so it’s above everything */
-}
+    /* Social Sidebar */
+    .social-sidebar {
+      position: fixed;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      z-index: 9999;
+    }
 
-.social-sidebar a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 50%;
-  color: var(--fg);
-  transition: all 0.3s ease;
-}
+    .social-sidebar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      color: var(--fg);
+      transition: all 0.3s ease;
+    }
 
-.social-sidebar a:hover {
-  background: var(--accent);
-  color: #000;
-  transform: translateX(4px) scale(1.1);
-}
+    .social-sidebar a:hover {
+      background: var(--accent);
+      color: #000;
+      transform: translateX(4px) scale(1.1);
+    }
 
-.social-sidebar svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 1.5;
-}
+    .social-sidebar svg {
+      width: 20px;
+      height: 20px;
+      stroke-width: 1.5;
+    }
 
-/* Optional: hide on really small screens */
-@media (max-width: 600px) {
-  .social-sidebar { display: none; }
-}
-
+    @media (max-width: 600px) {
+      .social-sidebar { display: none; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div>Abhisek Ghosh</div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#philosophy">Philosophy</a>
-      <a href="#music">Music</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<nav>
+  <div>Abhisek Ghosh</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#philosophy">Philosophy</a>
+    <a href="#music">Music</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-  <!-- Social Sidebar -->
+<!-- Social Sidebar -->
 <div class="social-sidebar">
   <a href="https://open.spotify.com/" target="_blank" aria-label="Spotify">
     <svg data-lucide="spotify"></svg>
@@ -331,135 +315,132 @@
   </a>
 </div>
 
+<!-- Hero Header -->
+<header>
+  <div>
+    <h1>Music as <span class="accent">Presence</span></h1>
+    <p>Voice. Devotion. Creation.<br>Live performances, teaching, and sound as a living practice.</p>
+    <a href="#music" class="btn">Enter</a>
+  </div>
+</header>
 
-  <!-- Hero Header -->
-  <header>
-    <div>
-      <h1>Music as <span class="accent">Presence</span></h1>
-      <p>Voice. Devotion. Creation.<br/>Live performances, teaching, and sound as a living practice.</p>
-      <a href="#music" class="btn">Enter</a>
+<!-- About Section -->
+<section id="about" class="flex-section fade-on-scroll">
+  <img src="images/Abhisek 20SS.jpg" alt="Abhisek Ghosh">
+  <div>
+    <h2>About</h2>
+    <p class="about-text">
+      Abhisek Ghosh is a Pop artist whose music blends Indian classical nuances,
+      Bengali melodies, and Western Rock & Pop energy. As a songwriter, composer,
+      and producer, he crafts performances that leave lasting emotional impressions.
+      <br><br>
+      From conducting 1000 instrumentalists at the 2016 World Cultural Festival in
+      Delhi to live radio performances with All India Radio, Abhisek’s work bridges
+      tradition and contemporary sound.
+      <br><br>
+      A Berklee College of Music graduate with a Master’s in Contemporary Performance,
+      he continues to explore music that resonates deeply, creating moments of
+      presence and connection for every listener.
+    </p>
+  </div>
+</section>
+
+<!-- Philosophy Section -->
+<section id="philosophy" class="fade-on-scroll">
+  <h2>Philosophy</h2>
+  <div class="philosophy">
+    <div class="philosophy-entry">
+      Music is not something I perform.<br>
+      It is something I enter.
+      <span>— on presence</span>
     </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="flex-section fade-on-scroll">
-    <img src="images/Abhisek 20SS.jpg" alt="Abhisek Ghosh">
-    <div>
-      <h2>About</h2>
-      <p class="about-text">
-        Abhisek Ghosh is a Pop artist whose music blends Indian classical nuances,
-        Bengali melodies, and Western Rock & Pop energy. As a songwriter, composer,
-        and producer, he crafts performances that leave lasting emotional impressions.
-        <br><br>
-        From conducting 1000 instrumentalists at the 2016 World Cultural Festival in
-        Delhi to live radio performances with All India Radio, Abhisek’s work bridges
-        tradition and contemporary sound.
-        <br><br>
-        A Berklee College of Music graduate with a Master’s in Contemporary Performance,
-        he continues to explore music that resonates deeply, creating moments of
-        presence and connection for every listener.
-      </p>
+    <div class="philosophy-entry">
+      Technique gives the body confidence.<br>
+      Silence gives the music permission.
+      <span>— notes from practice</span>
     </div>
-  </section>
-
-  <!-- Philosophy Section -->
-  <section id="philosophy" class="fade-on-scroll">
-    <h2>Philosophy</h2>
-    <div class="philosophy">
-      <div class="philosophy-entry">
-        Music is not something I perform.  
-        It is something I enter.
-        <span>— on presence</span>
-      </div>
-      <div class="philosophy-entry">
-        Technique gives the body confidence.  
-        Silence gives the music permission.
-        <span>— notes from practice</span>
-      </div>
-      <div class="philosophy-entry">
-        When sound is honest,  
-        the listener recognizes themselves.
-        <span>— reflections</span>
-      </div>
+    <div class="philosophy-entry">
+      When sound is honest,<br>
+      the listener recognizes themselves.
+      <span>— reflections</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Music Section -->
-  <section id="music" class="fade-on-scroll">
-    <h2>Music & Performances</h2>
-    <p>Live concerts, studio work, collaborative projects, and curated experiences. Sound as a space of attention.</p>
-    <div class="music-gallery">
-      <div class="music-item">
-        <img src="images/RISE Poster2.jpg" alt="Album 1">
-        <p>Album / RISE </p>
-        <a href="https://youtu.be/x-Zm_5buvbU?si=maNb6MJoySJeVTsq" class="btn">Listen</a>
-      </div>
-      <div class="music-item">
-        <img src="images/POR.jpg" alt="Album 2">
-        <p>Album / Pocket of Regrets </p>
-        <a href="https://youtu.be/KJr4HHavay4?si=nW48MOo1TuLsYR4f" class="btn">Listen</a>
-      </div>
-      <div class="music-item">
-        <img src="images/Mora Saiyaan.jpg" alt="Album 3">
-        <p>Album / Mora Saiyaan </p>
-        <a href="https://youtu.be/RBldXc7x05k?si=W9UO1b25KPMyEwsz" class="btn">Listen</a>
-      </div>
+<!-- Music Section -->
+<section id="music" class="fade-on-scroll">
+  <h2>Music & Performances</h2>
+  <p>Live concerts, studio work, collaborative projects, and curated experiences. Sound as a space of attention.</p>
+  <div class="music-gallery">
+    <div class="music-item">
+      <img src="images/RISE Poster2.jpg" alt="Album 1">
+      <p>Album / RISE</p>
+      <a href="https://youtu.be/x-Zm_5buvbU?si=maNb6MJoySJeVTsq" class="btn">Listen</a>
     </div>
-    <a href="#contact" class="btn" style="margin-top: 2rem;">Bookings</a>
-  </section>
-
-  <!-- Teaching Section -->
-  <section id="teaching" class="flex-section fade-on-scroll">
-    <img src="images/teaching.jpg" alt="Teaching">
-    <div>
-      <h2>Teaching</h2>
-      <p>Voice, creativity, and musical presence. Classes rooted in technique, awareness, and expression.</p>
-      <a href="https://njamusicclass.com" class="btn">Music Classes</a>
+    <div class="music-item">
+      <img src="images/POR.jpg" alt="Album 2">
+      <p>Album / Pocket of Regrets</p>
+      <a href="https://youtu.be/KJr4HHavay4?si=nW48MOo1TuLsYR4f" class="btn">Listen</a>
     </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="fade-on-scroll">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="images/gallery1.jpg" alt="Live performance">
-      <img src="images/gallery2.jpg" alt="Studio session">
-      <img src="images/gallery3.jpg" alt="Teaching">
-      <img src="images/gallery4.jpg" alt="Collaboration">
+    <div class="music-item">
+      <img src="images/Mora Saiyaan.jpg" alt="Album 3">
+      <p>Album / Mora Saiyaan</p>
+      <a href="https://youtu.be/RBldXc7x05k?si=W9UO1b25KPMyEwsz" class="btn">Listen</a>
     </div>
-  </section>
+  </div>
+  <a href="#contact" class="btn" style="margin-top: 2rem;">Bookings</a>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="fade-on-scroll">
-    <h2>Contact</h2>
-    <p>For performances, collaborations, or classes.</p>
-    <p class="accent">contact@abhisekghosh.live</p>
-  </section>
+<!-- Teaching Section -->
+<section id="teaching" class="flex-section fade-on-scroll">
+  <img src="images/teaching.jpg" alt="Teaching">
+  <div>
+    <h2>Teaching</h2>
+    <p>Voice, creativity, and musical presence. Classes rooted in technique, awareness, and expression.</p>
+    <a href="https://njamusicclass.com" class="btn">Music Classes</a>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    © <span id="year"></span> Abhisek Ghosh · All Rights Reserved
-  </footer>
+<!-- Gallery Section -->
+<section id="gallery" class="fade-on-scroll">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <img src="images/gallery1.jpg" alt="Live performance">
+    <img src="images/gallery2.jpg" alt="Studio session">
+    <img src="images/gallery3.jpg" alt="Teaching">
+    <img src="images/gallery4.jpg" alt="Collaboration">
+  </div>
+</section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+<!-- Contact Section -->
+<section id="contact" class="fade-on-scroll">
+  <h2>Contact</h2>
+  <p>For performances, collaborations, or classes.</p>
+  <p class="accent">contact@abhisekghosh.live</p>
+</section>
 
-    const faders = document.querySelectorAll('.fade-on-scroll');
-    const appearOptions = { threshold: 0.2 };
+<footer>
+  © <span id="year"></span> Abhisek Ghosh · All Rights Reserved
+</footer>
 
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, appearOptions);
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-    faders.forEach(fader => appearOnScroll.observe(fader));
+  const faders = document.querySelectorAll('.fade-on-scroll');
+  const observerOptions = { threshold: 0.2 };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
 
-    lucide.createIcons();
-  </script>
+  // Initialize lucide icons
+  window.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
+</script>
 
 </body>
 </html>
